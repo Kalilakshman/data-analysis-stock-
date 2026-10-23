@@ -27,7 +27,7 @@ git add .
 
 # Commit
 Write-Host "[*] Creating commit..." -ForegroundColor Green
-git commit -m "feat: complete stock analysis dashboard, visual output index, and documentation"
+git commit -m "docs: update ML model benchmark to include Naive Baseline and Linear Regression specifications"
 
 # Push
 Write-Host "[*] Pushing to main branch..." -ForegroundColor Green

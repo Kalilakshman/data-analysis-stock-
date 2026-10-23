@@ -72,12 +72,14 @@ This repository delivers an institutional-grade **Financial Stock Market Analysi
 
 ### 3. Machine Learning Model Benchmark (Out-of-Sample Evaluation)
 
-> **Evaluation Methodology:** Strict chronological train-test split (80% training / 20% out-of-sample testing). No future shuffle or look-ahead leakage.
+> **Evaluation Methodology:** Strict chronological train-test split (80% training / 20% out-of-sample testing). No random shuffling; features use only information available at prediction time.
 
-| Model Architecture | MAE ($) | RMSE ($) | $R^2$ Score | Predictive Characteristics |
-| :--- | :---: | :---: | :---: | :--- |
-| **Linear Regression (Autoregressive OLS)** | **18.3902** | **26.6997** | **0.9558** | **Superior out-of-sample extrapolation**; captures continuous autoregressive persistence effectively. |
-| **Random Forest Regressor ($n=200$)** | **35.4919** | **47.5669** | **0.8598** | Exhibits step-wise plateauing when encountering trending regime shifts outside tree partition boundaries. |
+| **Model Architecture** | **MAE ($)** | **RMSE ($)** | **R² Score** | **Predictive Characteristics** |
+|---|---:|---:|---:|---|
+| **Naive Baseline (Persistence Model)** | `TBD` | `TBD` | `TBD` | Assumes the next trading day's closing price will equal the current day's closing price; serves as the benchmark. |
+| **Linear Regression (Autoregressive OLS)** | `TBD` | `TBD` | `TBD` | Models the linear relationship between recent closing prices, lagged values, and moving averages to forecast the next trading day's close. |
+
+**Key Finding:** Model performance is assessed against the Naive Baseline. Linear Regression is considered an improvement only if its out-of-sample results demonstrate better predictive performance on the selected evaluation metrics.
 
 ---
 
